@@ -1,0 +1,14 @@
+<Library>
+    <Book id="1">
+        <Title>XML Fundamentals</Title>
+        <Author>John Doe</Author>
+        <Published>2021</Published>
+        <Genre>Education</Genre>
+    </Book>
+    <Book id="2">
+        <Title>XSD Mastery</Title>
+        <Author>Jane Smith</Author>
+        <Published>2022</Published>
+        <Genre>Reference</Genre>
+    </Book>
+</Library>

@@ -1,0 +1,6 @@
+<Data>
+    <Item type="integer">1234</Item>
+    <Item type="string">Hello, world!</Item>
+    <Item type="date">2023-01-01</Item>
+    <Item type="datetime">2023-01-01T12:00:00+00:00</Item>
+</Data>

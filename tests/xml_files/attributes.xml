@@ -1,0 +1,12 @@
+<Users>
+    <User id="001" role="admin">
+        <FirstName>John</FirstName>
+        <LastName>Doe</LastName>
+        <Email>john.doe@example.com</Email>
+    </User>
+    <User id="002" role="member">
+        <FirstName>Jane</FirstName>
+        <LastName>Smith</LastName>
+        <Email>jane.smith@example.com</Email>
+    </User>
+</Users>

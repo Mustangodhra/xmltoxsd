@@ -1,0 +1,11 @@
+<Catalog>
+    <Product id="1001">
+        <Name>SuperWidget</Name>
+        <Category>
+            <Main>Widgets</Main>
+            <Sub>Super</Sub>
+        </Category>
+        <Price currency="USD">19.99</Price>
+        <Stock>Available</Stock>
+    </Product>
+</Catalog>
