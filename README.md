@@ -22,7 +22,7 @@ Here's how to quickly get started with xmltoxsd:
 from xmltoxsd import XSDGenerator
 
 generator = XSDGenerator()
-xsd_schema = generator.generate_xsd("path/to/your/xml_file.xml")
+xsd_schema = generator.generate_xsd("path/to/your/xml_file.xml", min_occurs="0")
 print(xsd_schema)
 ```
 
@@ -34,10 +34,10 @@ with open("output.xsd", "w") as f:
 ```
 
 ## Contributing
-We welcome contributions to the xmltoxsd library. Please read our CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+We welcome contributions to the xmltoxsd library. 
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Mustangodhra/xmltoxsd/blob/main/LICENSE) file for details.
 
 ## Support
 If you have any questions or encounter issues using the library, please open an issue on my GitHub repository.
