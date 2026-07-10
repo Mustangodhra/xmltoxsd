@@ -34,18 +34,20 @@ class XSDGenerator:
         """
         ns = "{http://www.w3.org/2001/XMLSchema}"
         element_name = element.tag.split('}')[-1]
-        element_def = etree.SubElement(parent, f"{ns}element", name=element_name, minOccurs=min_occurs, maxOccurs="1")
-        
-        if len(element) > 0 or len(element.attrib):
-            complex_type = etree.SubElement(element_def, f"{ns}complexType")
-            sequence = etree.SubElement(complex_type, f"{ns}sequence")
-            for child in element:
-                self.process_element(child, sequence, min_occurs)
-            for attr_name, attr_value in element.attrib.items():
-                attr_type = infer_type(attr_value)
-                etree.SubElement(complex_type, f"{ns}attribute", name=attr_name, type=attr_type)
-        else:
-            element_def.set('type', infer_type(element.text))
+        same_element = parent.find(f"./*[@name='{element_name}']")
+        if same_element is None:
+            element_def = etree.SubElement(parent, f"{ns}element", name=element_name, minOccurs=min_occurs, maxOccurs="1")
+
+            if len(element) > 0 or len(element.attrib):
+                complex_type = etree.SubElement(element_def, f"{ns}complexType")
+                sequence = etree.SubElement(complex_type, f"{ns}sequence")
+                for child in element:
+                    self.process_element(child, sequence, min_occurs)
+                for attr_name, attr_value in element.attrib.items():
+                    attr_type = infer_type(attr_value)
+                    etree.SubElement(complex_type, f"{ns}attribute", name=attr_name, type=attr_type)
+            else:
+                element_def.set('type', infer_type(element.text))
 
 if __name__ == "__main__":
     generator = XSDGenerator()

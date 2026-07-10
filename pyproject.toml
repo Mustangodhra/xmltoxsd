@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "xmltoxsd"
-version = "0.1.0"
-authors = [{name = "Mustansir Godhrawala", email = "mustansirgodhrawala9@gmail.com"}]
+version = "0.1.1"
+authors = [{name = "Mustansir Godhrawala", email = "mustansirgodhrawala9@gmail.com"}, {name = "Rob Hills", email = "rob@medimorphosis.com.auj"}]
 description = "A library for converting XML documents to XSD schemas."
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -23,7 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Operating System :: OS Independent",
 ]
-urls = {homepage = "https://github.com/Mustangodhra/xmltoxsd"}
+urls = [{homepage = "https://github.com/Mustangodhra/xmltoxsd"}, {homepage = "https://github.com/rob-hills/xmltoxsd"}]
 
 dependencies = [
     "lxml>=4.6.3",
