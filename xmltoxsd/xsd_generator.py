@@ -34,8 +34,12 @@ class XSDGenerator:
         """
         ns = "{http://www.w3.org/2001/XMLSchema}"
         element_name = element.tag.split('}')[-1]
-        element_def = etree.SubElement(parent, f"{ns}element", name=element_name, minOccurs=min_occurs, maxOccurs="1")
-        
+        if parent.tag == f"{ns}schema":
+            # minOccurs/maxOccurs are not allowed on top-level element declarations
+            element_def = etree.SubElement(parent, f"{ns}element", name=element_name)
+        else:
+            element_def = etree.SubElement(parent, f"{ns}element", name=element_name, minOccurs=min_occurs, maxOccurs="1")
+
         if len(element) > 0 or len(element.attrib):
             complex_type = etree.SubElement(element_def, f"{ns}complexType")
             sequence = etree.SubElement(complex_type, f"{ns}sequence")
